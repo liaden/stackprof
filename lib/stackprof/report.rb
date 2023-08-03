@@ -655,7 +655,8 @@ module StackProf
         samples: d1[:samples] + d2[:samples],
         gc_samples: d1[:gc_samples] + d2[:gc_samples],
         missed_samples: d1[:missed_samples] + d2[:missed_samples],
-        frames: frames
+        frames: d1[:frames].merge(d2[:frames]),
+        raw: d1[:raw] + d2[:raw],
       }
 
       self.class.new(data)
